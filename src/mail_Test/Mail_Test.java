@@ -18,6 +18,10 @@ public class Mail_Test
 			String host = "172.16.200.27" ;
 			String from = "chichun_yu@syscom.com.tw" ;
 			String to = "chichun_yu@syscom.com.tw" ;
+			
+			String[] a = new String[1] ;		
+			a[0] = "chichun_yu@syscom.com.tw" ;
+			a[1] = "naibau2004@gmail.com" ;
 					
 //			這行不曉得幹啥用的，這行連同下面二行為建立mail連線的標準程式碼
 			Properties props = System.getProperties() ;
@@ -36,6 +40,10 @@ public class Mail_Test
 			
 //			設定收件者email
 			MailMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(to) ) ;
+	
+//			多個收件者mail
+//			MailMessage.setRecipients(Message.RecipientType.TO, InternetAddress.parse("chichun_yu@syscom.com.tw,naibau2004@gmail.com"));
+			
 			
 //			設定郵件標題
 			MailMessage.setSubject( "Test 測試 测试 テスト のテスト 実験 테스트 !@#$%^&*()_+" ) ;
