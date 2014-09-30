@@ -20,10 +20,10 @@ public class Mail_Test
 			String to = "chichun_yu@syscom.com.tw" ;
 
 					
-//			這行不曉得幹啥用的，這行連同下面二行為建立mail連線的標準程式碼
+//			這行連同下面二行為建立mail連線的標準程式碼
 			Properties props = System.getProperties() ;
 			
-//			設定SMTP Server，前面的"mail.smtp.host"固定照抄，「host」是變數
+//			設定SMTP Server，前面的「"mail.smtp.host"」固定照抄，「host」是變數
 			props.put("mail.smtp.host", host ) ;
 			
 //			取得與SMTP Server的連線，props使用「props.put」取得mail Server
