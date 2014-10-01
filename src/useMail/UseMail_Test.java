@@ -17,10 +17,10 @@ public class UseMail_Test
 		toList.add( "chichun_yu@syscom.com.tw" ) ;
 		a.setTo( toList ) ;
 		
-		a.setSubJect("This is the Test for Java OO" ) ;
+		a.setSubJect( "This is the Test for Java OO" ) ;
 		
-		mailText.add("Test 測試 测试 テスト のテスト 実験 테스트 !@#$%^&*()_+") ;
-		mailText.add("象徵性的第二行") ;
+		mailText.add( "Test 測試 测试 テスト のテスト 実験 테스트 !@#$%^&*()_+" ) ;
+		mailText.add( "象徵性的第二行" ) ;
 		a.setMailText( mailText ) ;
 		
 		a.sendMail_SMTP();
