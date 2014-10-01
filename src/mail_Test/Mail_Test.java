@@ -45,7 +45,7 @@ public class Mail_Test
 			MailMessage.setSubject( "Test 測試 测试 テスト のテスト 実験 테스트 !@#$%^&*()_+" ) ;
 			
 //			設定郵件內文，只能存在一個
-			MailMessage.setText ( "Test 測試 测试 テスト のテスト 実験 테스트 !@#$%^&*()_+" ); 
+			MailMessage.setText ( "Test 測試 测试 テスト のテスト 実験 테스트 !@#$%^&*()_+\n" + "Test 測試 测试 テスト のテスト 実験 테스트 !@#$%^&*()_+" ); 
 					
 //			傳送
 			Transport.send( MailMessage );		

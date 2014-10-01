@@ -4,12 +4,13 @@ import java.util.ArrayList;
 
 public class UseMail 
 {
-	protected String mailServer ;
-	protected String from ;
-	protected ArrayList<String> to ;
-	protected ArrayList<String> mailText ;
-	protected ArrayList<String> cc ;
-	protected ArrayList<String> bcc ;
+	protected static String mailServer ;
+	protected static String from ;
+	protected static ArrayList<String> to ;
+	protected static String subJect ;
+	protected static ArrayList<String> mailText ;
+	protected static ArrayList<String> cc ;
+	protected static ArrayList<String> bcc ;
 	protected UseMail_Interface use_SMTP ;
 	
 	public void setMailServer ( String mailServer )
@@ -40,6 +41,16 @@ public class UseMail
 	public ArrayList<String> getTo ()
 	{
 		return this.to ;
+	}
+	
+	public void setSubJect ( String subJect )
+	{
+		this.subJect = subJect ;
+	}
+	
+	public String getSubJect ()
+	{
+		return this.subJect ;
 	}
 	
 	public void setMailText ( ArrayList<String> mailText )
