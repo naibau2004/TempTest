@@ -10,7 +10,7 @@ public class UseMail
 	protected ArrayList<String> mailText ;
 	protected ArrayList<String> cc ;
 	protected ArrayList<String> bcc ;
-	
+	protected UseMail_Interface use_SMTP ;
 	
 	public void setMailServer ( String mailServer )
 	{
@@ -72,13 +72,8 @@ public class UseMail
 		return this.bcc ;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public void sendMail_SMTP ()
+	{
+		use_SMTP.sendMail();
+	}
 }
