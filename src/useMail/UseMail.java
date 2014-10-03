@@ -11,6 +11,7 @@ public class UseMail
 	protected static ArrayList<String> mailText ;
 	protected static ArrayList<String> cc ;
 	protected static ArrayList<String> bcc ;
+	protected static ArrayList<String> fds ;
 	protected UseMail_Interface use_SMTP ;
 	
 	public void setMailServer ( String mailServer )
@@ -81,6 +82,16 @@ public class UseMail
 	public ArrayList<String> getBCC ()
 	{
 		return this.bcc ;
+	}
+	
+	public void setFDS ( ArrayList<String> fds )
+	{
+		this.fds = fds ;
+	}
+	
+	public ArrayList<String> getFDS ()
+	{
+		return this.fds ;
 	}
 	
 	public void sendMail_SMTP ()
