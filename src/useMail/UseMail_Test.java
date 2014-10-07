@@ -26,16 +26,11 @@ public class UseMail_Test
 		bccList.add("naibau2004@hotmail.com" ) ;
 		a.setBCC( bccList ) ;
 		
-	
 		a.setSubJect( "This is the Test for Java OO" ) ;
 		
 		mailText.add( "Test 測試 测试 テスト のテスト 実験 테스트 !@#$%^&*()_+" ) ;
 		mailText.add( "象徵性的第二行" ) ;
-		a.setMailText( mailText ) ;
-		
-		fdsList.add( "C:\\Users\\Eric\\Desktop\\6.txt" ) ;
-		a.setFDS( fdsList );
-				
+		a.setMailText( mailText ) ;	
 		a.sendMail_SMTP();
 		
 	}
