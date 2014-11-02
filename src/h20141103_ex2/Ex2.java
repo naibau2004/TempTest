@@ -1,8 +1,8 @@
-package EX1;
+package h20141103_ex2;
 
-public class Ex1
+public class Ex2 
 {
-	public static String [] intChangeFourString ( int x )		//ミよ猭琵计锣4计﹃
+	public static String[] intChangeFourString ( int x )		//ミよ猭琵计锣4计﹃
 	{
 		if ( x < 10 )											//块计计
 		{
@@ -22,7 +22,7 @@ public class Ex1
 			
 		}else if ( (x >= 10) && (x <100) )						//块计计
 		{
-			String []  tempArray = new String [4] ;
+			String []  tempArray = new String [4] ;				//ミ皚ノㄓ┯钡κ计计
 			
 			String tempX = Integer.toString( x ) ;				//盢x(10-99)锣﹃
 			String a = "0" ;									//絛瞅10-99盢计干0
@@ -77,7 +77,7 @@ public class Ex1
 		}
 	}
 	
-	public static String[] getArray ()							//絤策1よ猭よ猭穦肚絤策1璶―皚
+	public static String[] oldArray ()							//絤策1よ猭よ猭穦肚絤策1璶―皚
 	{
 		int counter = 0 ;										//ミ璸计竟ノㄓ癘魁Τ碭计穦才肈ヘ兵ン
 		String [] arrayAll = new String [9999] ;				//ミ既ノ皚肈ヘ矗ㄑぇ  
@@ -115,12 +115,154 @@ public class Ex1
 
 	}
 
+	public static String[] newArray ()							//絤策2よ猭よ猭穦肚絤策1┮⊿Τ计皚
+	{
+		String [] tempArray = new String[10000] ;
+		String [] oldArray = oldArray() ;
+		String [] newArray = new String [9999-oldArray.length] ;
+		int counter = 0 ;
+		
+		for ( String item : oldArray )
+		{
+			int intItem = Integer.parseInt(item) ;	
+			tempArray[intItem] = item ;	
+		}
+		
+		for ( int x = 1 ; x < 10000 ; x++ )
+		{
+			if ( tempArray[x] == null )
+			{
+				String [] temp = intChangeFourString (x) ;
+				String a = temp[0] ;
+				String b = temp[1] ;
+				String c = temp[2] ;
+				String d = temp[3] ;
+				newArray[counter] = a + b + c + d ;
+				counter = counter + 1 ;			
+			}
+		}
+		
+		return newArray ;
+	}
+				
 	public static void main ( String [] args )
 	{
-		for ( String item : Ex1.getArray() )					//喷靡程沧挡狦ず甧
+
+		if ( ! (args.length == 3) ) 
 		{
-			System.out.println ( item ) ;
+			System.out.println ( "叫块把计" ) ;
+			System.exit(0) ;
+			 
+		}else if ( ! (args[0].length() == 4) )
+		{
+			System.out.println ( "材把计叫块计" ) ;
+			System.exit(0) ;	
+		}
+		
+		String a = args[0].substring(0,1) ;
+		String b = args[0].substring(1,2) ;
+		String c = args[0].substring(2,3) ;
+		String d = args[0].substring(3,4) ;
+		
+		if ( a.equals(b) || a.equals(c) || a.equals(d) || b.equals(c) || b.equals(d) || c.equals(d) )
+		{
+			System.out.println ( "材把计ぇ计ぃΤ计" ) ;
+			System.exit(0) ;
+		}
+		
+		try
+		{
+			Integer.parseInt( args[1] ) ;	
+			Integer.parseInt( args[2] ) ;
+			
+		}catch ( Exception e )
+		{
+			System.out.println ( "材の材把计叫块计" ) ;
+			System.exit(0) ;
+		}
+		
+		if ( ! (args[1].length() == 1) || ! (args[2].length() == 1 ) )
+		{
+			System.out.println ( "材の材把计叫块1タ俱计" ) ;
+			System.exit(0) ;
+		}
+		
+		int tempX = Integer.parseInt( args[1] ) ;
+		int tempY = Integer.parseInt( args[2] ) ;
+		int total = tempX + tempY ; 
+		
+		if ( ! (total <=4) )
+		{
+			System.out.println ( "材の材把计ゲ惠┪单4" ) ;
+			System.exit(0) ;
+		}
+		
+		String [] sampleArray = Ex2.newArray() ;
+		String userNum1 = args[0].substring(0,1) ;
+		String userNum2 = args[0].substring(1,2) ;
+		String userNum3 = args[0].substring(2,3) ;
+		String userNum4 = args[0].substring(3,4) ;
+		int userA = Integer.parseInt( args[1] ) ;
+		int userB = Integer.parseInt( args[2] ) ;
+
+		
+		for ( String arrayNum : sampleArray )
+		{
+			String arrayNum1 = arrayNum.substring(0,1) ;
+			String arrayNum2 = arrayNum.substring(1,2) ;
+			String arrayNum3 = arrayNum.substring(2,3) ;
+			String arrayNum4 = arrayNum.substring(3,4) ;		
+			int counterA = 0 ;
+			int counterB = 0 ;
+			
+			if ( userNum1.equals(arrayNum1) )
+				counterA = counterA + 1 ;
+
+			if ( userNum2.equals(arrayNum2) )
+				counterA = counterA + 1 ;
+			
+			if ( userNum3.equals(arrayNum3) )
+				counterA = counterA + 1 ;
+			
+			if ( userNum4.equals(arrayNum4) )
+				counterA = counterA + 1 ;
+				
+			if ( ! (userNum1.equals(arrayNum1)) )
+			{
+				if ( userNum1.equals(arrayNum2) || userNum1.equals(arrayNum3) || userNum1.equals(arrayNum4) )
+				{
+					counterB = counterB + 1 ;
+				}	
+			}
+			
+			if ( ! (userNum2.equals(arrayNum2)) )
+			{
+				if ( userNum2.equals(arrayNum1) || userNum2.equals(arrayNum3) || userNum2.equals(arrayNum4) )
+				{
+					counterB = counterB + 1 ;
+				}
+			}
+			
+			if ( ! (userNum3.equals(arrayNum3)) )
+			{
+				if ( userNum3.equals(arrayNum1) || userNum3.equals(arrayNum2) || userNum3.equals(arrayNum4) )
+				{
+					counterB = counterB + 1 ;
+				}
+			}
+			
+			if ( ! (userNum4.equals(arrayNum4)) )
+			{
+				if ( userNum4.equals(arrayNum1) || userNum4.equals(arrayNum2) || userNum4.equals(arrayNum3) )
+				{
+					counterB = counterB + 1 ;
+				}
+			}
+			
+			if ( (counterA >= userA) && (counterB >= userB) )
+			{
+				System.out.println ( arrayNum ) ;
+			}	
 		}
 	}
-	
 }
