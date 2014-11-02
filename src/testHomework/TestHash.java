@@ -1,6 +1,6 @@
-package homework;
+package testHomework;
 
-public class Ex2 
+public class TestHash 
 {
 	public static String[] getArray ()					//絤策1よ猭よ猭穦肚絤策1璶―皚
 	{
@@ -162,7 +162,7 @@ public class Ex2
 	
 	public static String[] newArray ()					//ノ絤策1よ猭眔絤策1┮⊿Τ计穦肚皚
 	{
-		String [] oldArray = Ex2.getArray() ;
+		String [] oldArray = TestHash.getArray() ;
 		int newArraySize = 9999 - oldArray.length ;
 		String [] newArray = new String [newArraySize] ;
 		
@@ -174,7 +174,7 @@ public class Ex2
 	
 	public static void main ( String [] args )
 	{
-		Ex2.newArray() ;
+		TestHash.newArray() ;
 	
 		if ( ! (args.length == 3) ) 
 		{
@@ -225,7 +225,7 @@ public class Ex2
 			System.exit(0) ;
 		}
 		
-		String [] sampleArray = Ex2.getArray() ;
+		String [] sampleArray = TestHash.getArray() ;
 		String userNum1 = args[0].substring(0,1) ;
 		String userNum2 = args[0].substring(1,2) ;
 		String userNum3 = args[0].substring(2,3) ;
