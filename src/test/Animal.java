@@ -1,12 +1,10 @@
 package test;
 
-public class Animal {
+public abstract class Animal {
 	
-	private String name ;
-	private int weight ;
+	public String name ;
+	public double tall ;
+	public double weight ;
+	public abstract void bark ();
 
-	public Animal(String name, int weight) {
-		this.name = name ;
-		this.weight = weight ;	
-	}
 }

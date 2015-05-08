@@ -1,14 +1,24 @@
 package test;
 
-public class Dog extends Animal {
+public class Dog extends Animal implements Machine {
+
 	
-	private String type ;
+	public String name = Machine.name ;
 	
-	public Dog (String name , int weight , String type){
-		super(name , weight);		//這個要寫在建構子的第一行
-		this.type = type ;
+	
+	public double tall = Machine.tall ;
+	public double weight = Machine.weight ;
+	
+	
+	@Override
+	public void light() {
+		System.out.println("I cant light !");	
+	}
+
+	@Override
+	public void bark() {		
+		System.out.println("汪! 汪! 汪!");		
 	}
 	
-	
-	
+
 }
