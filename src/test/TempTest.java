@@ -1,7 +1,7 @@
 package test;
 
 /*
- *Last update :2015/06/23 02:43
+ *Last update :2015/06/23 AM 02:43
  *User Story：
  */
 
